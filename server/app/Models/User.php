@@ -42,6 +42,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $appends = [
+        'fullName'
+    ];
+
     /**
      * The attributes that should be cast.
      *
@@ -54,6 +58,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
     public function requestForms()
     {
         return $this->hasMany(RequestForm::class);
@@ -102,6 +107,22 @@ class User extends Authenticatable
     {
         return $this->hasMany(AreaManager::class);
     }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->firstName} {$this->lastName}";
+    }
+
+    public function notedBies()
+    {
+        return $this->hasMany(NotedBy::class);
+    }
+
+    public function approvedBies()
+    {
+        return $this->hasMany(ApprovedBy::class);
+    }
+
     /**
      * The default values for attributes.
      *

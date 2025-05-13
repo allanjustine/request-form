@@ -286,7 +286,7 @@ const SetupPosition: React.FC = () => {
         setIsRefresh={setIsRefresh}
       />
       {toDelete && (
-        <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50 ">
+        <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black/50 ">
           <div className=" p-4  w-1/2 md:w-1/3 bg-white flex flex-col justify-center rounded-[12px] shadow-lg">
             <div className="flex justify-between w-full">
               <div className="flex items-center">

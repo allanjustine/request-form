@@ -60,7 +60,7 @@ class ApprovalProcessNotification extends Notification
             ])
             ->subject('You have a new request form need to approve - ' . $this->requestForm->form_type . ' ' . now()->format('Y-m-d H:i:s'))
             ->line('You have a new request form to approve.')
-            ->line('Request Form Type : ' . $this->approvalProcess->RequestForm->form_type);
+            ->line('Request Form Type : ' . $this->approvalProcess->requestForm->form_type);
     }
 
     /**
@@ -73,11 +73,13 @@ class ApprovalProcessNotification extends Notification
         $approvalUrl = route('view.single.request.form.for.approval', ['request_form_id' => $this->requestForm->id]);
         return [
             'message' => 'You have a new request form to approve',
-            'request_form_id' => $this->approvalProcess->RequestForm->form_type,
+            'request_form_id' => $this->approvalProcess->requestForm->form_type,
             'created_at' => now()->toDateTimeString(),
             'approvalUrl' => $approvalUrl,
             'requesterFirstname' => $this->requesterFirstname,
             'requesterLastname' => $this->requesterLastname,
+            'request_reference' => 'approver',
+            'request_id' => $this->approvalProcess->requestForm->id,
 
             //'level' => $this->approvalProcess->level,
             //'status' => $this->approvalProcess->status,

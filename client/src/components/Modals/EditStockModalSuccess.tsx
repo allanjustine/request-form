@@ -10,11 +10,11 @@ const EditStockModalSuccess = ({
   refreshData: () => void;
 }) => {
   return (
-    <div className="fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 flex-col ">
+    <div className="fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 flex-col ">
       <div className="bg-white relative w-1/6 flex flex-col items-center justify-center rounded-md ">
         <FontAwesomeIcon
           icon={faCircleCheck}
-          className="size-20 text-primary absolute -top-6  "
+          className="!size-20 text-primary absolute -top-6  "
         />
         <div>
           <h1 className="mt-20 text-[28px] font-bold text-center">Success</h1>

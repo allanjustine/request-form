@@ -458,7 +458,7 @@ const Nav: React.FC<NavProps> = ({
             <div className="relative">
               <BellIcon
                 className={`size-[30px] cursor-pointer ${
-                  isOpenNotif ? "text-yellow" : "text-gray-400"
+                  isOpenNotif ? "text-yellow-400" : "text-gray-400"
                 }`}
                 onClick={() => {
                   setIsOpenNotif(!isOpenNotif);
@@ -525,7 +525,7 @@ const Nav: React.FC<NavProps> = ({
 
                         const textColor =
                           notif.data.status === "approved"
-                            ? "text-green"
+                            ? "text-green-400"
                             : notif.data.status === "ongoing"
                             ? "text-blue-500"
                             : notif.type ===

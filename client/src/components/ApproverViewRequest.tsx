@@ -67,10 +67,10 @@ const ApproverViewRequest = (props: Props) => {
         <div
           className={`${
             row.status === "Pending"
-              ? "bg-yellow"
+              ? "bg-yellow-400"
               : row.status === "Approved"
-              ? "bg-green"
-              : "bg-pink"
+              ? "bg-green-400"
+              : "bg-pink-400"
           } rounded-lg w-5/12 py-1 text-center text-white`}
         >
           {row.status}

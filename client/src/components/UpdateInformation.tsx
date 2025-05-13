@@ -673,11 +673,11 @@ const UpdateInformation = () => {
       </div>
 
       {showSuccessModal && (
-        <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50 ">
+        <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black/50 ">
           <div className="relative flex flex-col items-center justify-center w-1/4 bg-white rounded-md ">
             <FontAwesomeIcon
               icon={faCircleCheck}
-              className="absolute size-20 text-primary -top-6 "
+              className="absolute !size-20 text-primary -top-6 "
             />
             <div>
               <h1 className="mt-20 text-[28px] font-bold text-center">
@@ -699,11 +699,11 @@ const UpdateInformation = () => {
         </div>
       )}
       {signatureButton && (
-        <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50 ">
+        <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black/50 ">
           <div className="relative flex flex-col items-center justify-center w-1/4 bg-white rounded-md ">
             <FontAwesomeIcon
               icon={faCircleCheck}
-              className="absolute size-20 text-primary -top-6 "
+              className="absolute !size-20 text-primary -top-6 "
             />
             <div>
               <h1 className="mt-20 text-[28px] font-bold text-center">

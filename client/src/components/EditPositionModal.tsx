@@ -79,7 +79,7 @@ const EditPositionModal = ({
   };
 
   return (
-    <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50">
+    <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black/50">
       <div className="p-6 w-10/12 md:w-2/5 bg-primary text-white rounded-t-[12px] shadow-xl relative">
         <h2 className="text-center text-xl md:text-[32px] font-bold">
           Edit Position

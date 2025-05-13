@@ -1010,7 +1010,7 @@ const CreateApplicationCash = (props: Props) => {
                       </span>
                     )}
                     <span
-                      className={`bg-yellow flex items-center cursor-pointer hover:bg-white hover:border-4 hover:border-yellow hover:text-yellow text-gray-950 max-w-md justify-center ${buttonStyle}`}
+                      className={`bg-yellow-400 flex items-center cursor-pointer hover:bg-white hover:border-4 hover:border-yellow-400  hover:text-yellow-400  text-gray-950 max-w-md justify-center ${buttonStyle}`}
                       onClick={handleAddItem}
                     >
                       <PlusCircleIcon
@@ -1290,7 +1290,7 @@ const CreateApplicationCash = (props: Props) => {
             </div>
           </div>
           {showConfirmationModal && (
-            <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+            <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black/50">
               <div className="p-4 bg-white rounded-md">
                 <p>Are you sure you want to submit the request?</p>
                 <div className="flex justify-end mt-4">

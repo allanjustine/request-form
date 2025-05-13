@@ -583,11 +583,11 @@ const Request = (props: Props) => {
           <div
             className={`${
               row.status.trim() === "Pending"
-                ? "bg-yellow"
+                ? "bg-yellow-400"
                 : row.status.trim() === "Approved"
-                ? "bg-green"
+                ? "bg-green-400"
                 : row.status.trim() === "Disapproved"
-                ? "bg-pink"
+                ? "bg-pink-400"
                 : row.status.trim() === "Ongoing"
                 ? "bg-blue-500"
                 : "bg-blue-700"

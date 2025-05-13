@@ -264,7 +264,7 @@ const AddAVPModal = ({
     );
   };
   return (
-    <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50">
+    <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black/50">
       <div className="p-4 w-10/12 sm:w-1/3 relative bg-primary flex justify-center mx-20 border-b rounded-t-[12px]">
         {selectedAVP && (
           <ArrowLeftIcon

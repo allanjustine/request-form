@@ -55,6 +55,8 @@ class OngoingNotification extends Notification
             'form_type' => $this->requestForm->form_type,
             'status' => $this->status,
             'created_at' => now()->toDateTimeString(),
+            'request_reference' => 'requester',
+            'request_id' => $this->requestForm->id,
         ];
     }
 

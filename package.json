@@ -1,0 +1,14 @@
+{
+  "name": "request-form",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.5",
+    "concurrently": "^9.1.2",
+    "daisyui": "^5.0.35",
+    "tailwindcss": "^4.1.5"
+  },
+  "scripts": {
+    "all": "concurrently \"cd server && composer run dev\" \"pnpm --prefix client start\""
+  }
+}

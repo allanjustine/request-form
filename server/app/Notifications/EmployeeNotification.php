@@ -72,7 +72,7 @@ class EmployeeNotification extends Notification
     }
 
     /**
-     * Get the array representation of the notification. 
+     * Get the array representation of the notification.
      *
      * @return array<string, mixed>
      */
@@ -83,6 +83,8 @@ class EmployeeNotification extends Notification
             'form_type' => $this->requestForm->form_type,
             'status' => $this->status,
             'created_at' => now()->toDateTimeString(),
+            'request_reference' => 'requester',
+            'request_id' => $this->requestForm->id,
         ];
     }
 

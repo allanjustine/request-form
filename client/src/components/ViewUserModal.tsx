@@ -31,7 +31,7 @@ const ViewUserModal: React.FC<ViewUserModalProps> = ({
     return null;
   }
   return (
-    <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50">
+    <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black/50">
       <div className="p-6 w-4/5 md:w-2/5 relative bg-primary flex justify-center mx-4 rounded-t-[12px] shadow-lg">
         <h2 className="text-center text-xl md:text-[32px] font-semibold text-white">
           User Information

@@ -38,7 +38,7 @@ class RequestFormController extends Controller
                 'noted_by' => 'string',
                 'currency' => 'required_if:form_type,Cash Disbursement Requisition Slip|string|in:PHP,USD,EUR',
                 'approved_by' => 'required|string',
-                'attachment.*' => 'file|mimes:webp,pdf,png,jpg,jpeg,doc,docx,xls,xlsx,ppt,pptx,bmp,txt,zip,gif',
+                'attachment.*' => 'file|mimes:webp,pdf,png,jpg,jpeg,doc,docx,xls,xlsx,ppt,pptx,bmp,txt,zip,gif,ico',
             ]);
 
             $userID = $validated['user_id'];
@@ -212,7 +212,8 @@ class RequestFormController extends Controller
                 $files = is_array($request->file('attachment')) ? $request->file('attachment') : [$request->file('attachment')];
 
                 foreach ($files as $file) {
-                    $filePath = $file->store('request_form_attachments', 'd_drive');
+                    // change to d_drive if using trunas
+                    $filePath = $file->store('request_form_attachments', 'public');
                     if (!$filePath) {
                         DB::rollBack();
                         return response()->json([
@@ -368,7 +369,7 @@ class RequestFormController extends Controller
             Log::error('Request form creation failed', ['error' => $e->getMessage()]);
             return response()->json([
                 'message' => 'An error occurred',
-                'error' => $e->getMessage()
+                'error' => $e->getMessage(),
             ], 500);
         }
     }
@@ -743,15 +744,15 @@ class RequestFormController extends Controller
                     ->orderBy('level')
                     ->first()?->user;
 
-                    
+
                     $approverName = "No Pending Approver";
 
                     if ($pendingApprover) {
                         $approverFromFinanceStaff = AVPFinanceStaff::where('staff_id', $pendingApprover->id)->exists();
-        
+
                         if ($approverFromFinanceStaff) {
                             $avpUser = User::where('position', 'AVP - Finance')->first();
-        
+
                             if ($avpUser) {
                                 $approverName = [
                                     'approver_name' => "{$avpUser->firstName} {$avpUser->lastName}",

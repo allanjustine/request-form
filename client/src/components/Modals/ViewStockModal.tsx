@@ -524,7 +524,7 @@ const ViewStockModal: React.FC<Props> = ({
     }
   };
   return (
-    <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+    <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-black/50">
       <div className="relative z-10 w-full p-4 mx-10 overflow-scroll bg-white border-black rounded-t-lg shadow-lg md:mx-0 md:w-1/2 space-y-auto h-3/4">
         <div className="sticky flex justify-end cursor-pointer top-2">
           <XMarkIcon
@@ -574,11 +574,11 @@ const ViewStockModal: React.FC<Props> = ({
             <p
               className={`${
                 record.status.trim() === "Pending"
-                  ? "bg-yellow"
+                  ? "bg-yellow-400"
                   : record.status.trim() === "Approved"
-                  ? "bg-green"
+                  ? "bg-green-400"
                   : record.status.trim() === "Disapproved"
-                  ? "bg-pink"
+                  ? "bg-pink-400"
                   : record.status.trim() === "Ongoing"
                   ? "bg-primary"
                   : "bg-blue-700"
@@ -812,9 +812,9 @@ const ViewStockModal: React.FC<Props> = ({
                           <p
                             className={`font-bold text-[12px] text-center mt-1 ${
                               user.data?.status === "Approved"
-                                ? "text-green"
+                                ? "text-green-400"
                                 : user.data?.status === "Pending"
-                                ? "text-yellow"
+                                ? "text-yellow-400"
                                 : user.data?.status === "Rejected"
                                 ? "text-red"
                                 : ""
@@ -877,9 +877,9 @@ const ViewStockModal: React.FC<Props> = ({
                               <p
                                 className={`font-bold text-[12px] text-center mt-1 ${
                                   user.status === "Approved"
-                                    ? "text-green"
+                                    ? "text-green-400"
                                     : user.status === "Pending" || !user.status
-                                    ? "text-yellow"
+                                    ? "text-yellow-400"
                                     : ""
                                 }`}
                               >
@@ -941,9 +941,9 @@ const ViewStockModal: React.FC<Props> = ({
                             <p
                               className={`font-bold text-[12px] text-center mt-1 ${
                                 user.status === "Approved"
-                                  ? "text-green"
+                                  ? "text-green-400"
                                   : user.status === "Pending" || !user.status
-                                  ? "text-yellow"
+                                  ? "text-yellow-400"
                                   : ""
                               }`}
                             >

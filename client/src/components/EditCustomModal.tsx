@@ -143,7 +143,7 @@ const AddCustomModal: React.FC<AddCustomModalProps> = ({
   if (!modalIsOpen) return null;
 
   return (
-    <div className="fixed top-0 left-0 z-10 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50">
+    <div className="fixed top-0 left-0 z-10 flex flex-col items-center justify-center w-full h-full bg-black/50">
       <div className="flex flex-col w-10/12 mx-20 bg-white rounded-lg shadow-lg sm:w-1/3">
         <div className="flex items-center justify-center p-4 rounded-t-lg bg-primary">
           <h2 className="text-xl font-bold text-center text-white md:text-2xl">
@@ -262,7 +262,7 @@ const AddCustomModal: React.FC<AddCustomModalProps> = ({
         </div>
       </div>
       {loading && (
-        <div className="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+        <div className="absolute flex items-center justify-center w-full h-full bg-black/50">
           <ClipLoader color="white" size={40} />
         </div>
       )}

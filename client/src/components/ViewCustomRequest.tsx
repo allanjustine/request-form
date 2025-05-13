@@ -20,7 +20,7 @@ const ViewCustomRequest = ({
   const inputStyle = "border border-black rounded-md p-1 w-full";
   return (
     modalIsOpen && (
-      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 flex-col ">
+      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 flex-col ">
         <div className=" p-4  w-1/3 md:w-1/4 relative bg-primary flex justify-center mx-20  border-b rounded-t-[12px]">
           <h2 className="text-center  text-xl md:text-[32px] font-bold text-white">
             Add {entityType}

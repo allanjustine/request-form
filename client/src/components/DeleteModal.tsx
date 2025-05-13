@@ -35,7 +35,7 @@ const DeleteModal = ({
 
   return (
     deleteModal && (
-      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 flex-col ">
+      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 flex-col ">
         <div className=" p-4  w-1/2 md:w-1/3 bg-white flex flex-col justify-center   rounded-[12px] shadow-lg">
           <div className="flex justify-between  w-full">
             <div className="flex items-center">

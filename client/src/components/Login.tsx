@@ -1,5 +1,5 @@
 import React, { useState, CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Slice from "./assets/Slice.png";
 import building from "./assets/building.jpg";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -31,6 +31,7 @@ const Login: React.FC = () => {
   } = useForm<UserCredentials>({
     resolver: zodResolver(schema),
   });
+  const navigate = useNavigate();
 
   const submitData: SubmitHandler<UserCredentials> = async (data) => {
     setLoading(true);
@@ -70,8 +71,8 @@ const Login: React.FC = () => {
         localStorage.setItem("profile_picture", response.data.profile_picture);
         localStorage.setItem("employee_id", response.data.employee_id);
         localStorage.setItem("expires_at", response.data.expires_at);
-
-        window.location.reload();
+        navigate("/dashboard");
+        // window.location.reload();
       } else {
         Swal.fire({
           icon: "error",

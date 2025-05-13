@@ -5,12 +5,12 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use app\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ChangePasswordController extends Controller
 {
-    
+
     public function changePassword(Request $request, $id)
 {
     // Find the user by id
@@ -33,7 +33,9 @@ class ChangePasswordController extends Controller
     // Update the user's password
     $user->password = Hash::make($request->new_password);
     $user->save();
-    
+
+    Auth::guard('web')->login($user);
+
     return response()->json(['success' => 'Password changed successfully.'], 200);
 }
 }

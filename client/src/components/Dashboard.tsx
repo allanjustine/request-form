@@ -271,11 +271,11 @@ const Dashboard: React.FC = () => {
         <div
           className={`${
             row.status.trim() === "Pending"
-              ? "bg-yellow"
+              ? "bg-yellow-400"
               : row.status.trim() === "Approved"
-              ? "bg-green"
+              ? "bg-green-400"
               : row.status.trim() === "Disapproved"
-              ? "bg-pink"
+              ? "bg-pink-400"
               : row.status.trim() === "Ongoing"
               ? "bg-primary"
               : "bg-blue-700"

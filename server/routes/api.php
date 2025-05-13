@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ApproverSavedController;
 use App\Http\Controllers\API\BranchController;
 use App\Http\Controllers\API\BranchHeadController;
 use App\Http\Controllers\API\ProfileController;
@@ -20,7 +21,7 @@ use App\Http\Controllers\API\AttachmentController;
 use App\Http\Controllers\API\NotificationController;
 use App\Http\Controllers\API\PositionController;
 use App\Http\Controllers\Test\PusherController;
-
+use Illuminate\Support\Facades\Auth;
 
 Route::get('edit-branch/{branch_id}', function ($branch_id) {
     return "Editing branch with ID: $branch_id";
@@ -121,10 +122,24 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('notifications/{id}/mark-as-read', [NotificationController::class, 'markAsRead'])->name('get.mark.as.read.notification');
     Route::get('notifications/{id}/count-unread-notification', [NotificationController::class, 'countUnreadNotifications'])->name('count.unread.notification');
     Route::put('notifications/mark-all-as-read/{userId}', [NotificationController::class, 'markAllAsRead'])->name('get.mark.all.as.read.notification');
+    Route::post('/read-notification/{id}', [NotificationController::class, 'markAsReadNotification']);
 
     // POSITION
 
     Route::post('/create-position', [PositionController::class, 'store']);
     Route::put('/update-position/{id}', [PositionController::class, 'update']);
     Route::delete('/delete-position/{id}', [PositionController::class, 'destroy']);
+
+    Route::post('/logout', function (Request $request) {
+        Auth::guard("web")->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Logged out successfully',
+        ], 204);
+    });
+
+    Route::post('/save-approved-noted-by', [ApproverSavedController::class, 'store']);
 });
